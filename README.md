@@ -27,18 +27,18 @@ Publish the website in the given URL.
 
 ### Step 6:
 
-Publish the website in the given URL.
+Publish the website : http://sarankumar.student.saveetha.in:80/
 
 ## PROGRAM :
 
-### area.html
+#### Area.html:
 ~~~
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>area of rectangle</title>
+    <title>Area of Rectangle</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
@@ -49,17 +49,17 @@ Publish the website in the given URL.
         font-family:Arial, Helvetica, sans-serif ;
     }
     body{
-        background-color:lightgreen;
+        background-color:rgb(127, 230, 30);
     }
     .container{
     width: 1080px;
-    height: 350px;
+    height: 500px;
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
-    border: 10px solid darkred;
-    background-color:rgb(223, 93, 93);
+    border: 10px solid ;
+    background-color:rgb(231, 21, 214);
     }
     h1{
         text-align: center;
@@ -73,6 +73,19 @@ Publish the website in the given URL.
         text-align: center;
         font-size: 20px;
     }
+    .footer {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color:rgb(255, 9, 42);
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 5px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  color: white;
+  margin-top: 145px;
+}
 </style>
 <body>
     <div class="container">
@@ -86,16 +99,20 @@ Length=<input type="text" name="length" value="{{l}}"></input></br>
 Breadth=<input type="text" name="breadth" value="{{b}}"></input></br>
     </div>
     <div class="calculate"> 
-<input type="submit" value="calculationarea"></input></br>
+<input type="submit" value="Calculation Area"></input></br>
     </div>
     <div class="calculate"> 
-area=<input type="text" name="area" value="{{area}}"></input></br>
+Area=<input type="text" name="area" value="{{area}}"></input></br>
+    </div>
+    <br>
+    <div class="footer">
+        Developed by Sarankumar J
     </div>
 </form>
 </body>
 </html>
 ~~~
-### views.py
+### Views.py:
 ~~~
 from django.shortcuts import render
 
@@ -113,12 +130,14 @@ def areacalculation(request):
         context["l"] = l
         context["b"] = b
 
-    return render(request,'mathapp/area.html',context)
+    return render(request,'myapp/area.html',context)
 
 ~~~
-### urls.py
+
+### Urls.py:
+
 ~~~
-"""calculations URL Configuration
+"""Saran URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -135,16 +154,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mathapp import views
+from myapp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('areaofrectangle/',views.areacalculation,name="areaofrectangle"),
+     path('areaofrectangle/',views.areacalculation,name="areaofrectangle"),
     path('',views.areacalculation,name="areaofrectangle")
 ]
+
 ~~~
 
+
 ## OUTPUT:
-![gitlogo](./saran.jpeg)
+![server](./serverside.png)
 
 
 ## Result:
